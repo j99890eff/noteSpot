@@ -1,0 +1,54 @@
+PODS:
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.2.0)
+  - CCHMapClusterController (1.6.6)
+  - FBSDKCoreKit (4.4.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.4.0)
+    - FBSDKCoreKit/no-arc (= 4.4.0)
+  - FBSDKCoreKit/arc (4.4.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.4.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.4.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.4.0):
+    - FBSDKCoreKit
+  - HanekeSwift (0.9.1)
+  - Parse (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
+  - ParseFacebookUtilsV4 (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+    - Parse (~> 1.7.5.3)
+  - ParseUI (1.1.4):
+    - Parse (~> 1.7)
+
+DEPENDENCIES:
+  - CCHMapClusterController
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - HanekeSwift
+  - Parse
+  - ParseFacebookUtilsV4
+  - ParseUI
+
+SPEC CHECKSUMS:
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  CCHMapClusterController: 982db41114b42a575798366371bd9908e0f9ec8b
+  FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
+  FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
+  FBSDKShareKit: a42865f20ba2d1cc548c4d0f73ad22cff6377ddb
+  HanekeSwift: 50d37bfbc4432edc649167e538c259feccb4a2bb
+  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
+  ParseFacebookUtilsV4: ea5db22e87b91cbf99b9d156642e2b97a4db7d51
+  ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
+
+COCOAPODS: 0.37.2
