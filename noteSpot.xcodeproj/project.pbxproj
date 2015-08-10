@@ -27,15 +27,10 @@
 		1FAD76591B3269EB00906C77 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAD76581B3269EB00906C77 /* libz.dylib */; };
 		1FAD765B1B3269F500906C77 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAD765A1B3269F500906C77 /* libsqlite3.dylib */; };
 		C525A4391B53A570008414D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C525A42B1B53A570008414D8 /* Images.xcassets */; };
-		C54148651B7876AE00977C98 /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54148641B7876AE00977C98 /* commentCell.swift */; };
 		C56E83631B75EF6F007E265D /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56E83621B75EF6F007E265D /* CommentsCell.swift */; };
 		C58220891B688AF70039E7D7 /* SimpleInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */; };
 		C58966931B771F1300B7A921 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58966911B771F1300B7A921 /* Main.storyboard */; };
 		C58966951B773B2500B7A921 /* DetailCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58966941B773B2500B7A921 /* DetailCommentViewController.swift */; };
-		C589669A1B7753C500B7A921 /* commentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58966981B7753C500B7A921 /* commentViewCell.swift */; };
-		C589669B1B7753C500B7A921 /* commentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58966991B7753C500B7A921 /* commentViewCell.xib */; };
-		C589669E1B775C2D00B7A921 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C589669C1B775C2D00B7A921 /* DetailViewCell.swift */; };
-		C589669F1B775C2D00B7A921 /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C589669D1B775C2D00B7A921 /* DetailViewCell.xib */; };
 		C58966A31B78626A00B7A921 /* DACTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58966A21B78626A00B7A921 /* DACTableViewController.swift */; };
 		C589E0E11B54F9FE0042305F /* ClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C589E0DE1B54F9FE0042305F /* ClusterAnnotationView.m */; };
 		C589E0E21B54F9FE0042305F /* DataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C589E0E01B54F9FE0042305F /* DataReader.m */; };
@@ -98,15 +93,10 @@
 		7F28F62F84104B0CAC40F973 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		80CF588B84F8D0B34296AE83 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C525A42B1B53A570008414D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "CCHMapClusterController Example iOS/Images.xcassets"; sourceTree = "<group>"; };
-		C54148641B7876AE00977C98 /* commentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
 		C56E83621B75EF6F007E265D /* CommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
 		C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleInfoViewCell.swift; sourceTree = "<group>"; };
 		C58966921B771F1300B7A921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C58966941B773B2500B7A921 /* DetailCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommentViewController.swift; sourceTree = "<group>"; };
-		C58966981B7753C500B7A921 /* commentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentViewCell.swift; sourceTree = "<group>"; };
-		C58966991B7753C500B7A921 /* commentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = commentViewCell.xib; sourceTree = "<group>"; };
-		C589669C1B775C2D00B7A921 /* DetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
-		C589669D1B775C2D00B7A921 /* DetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
 		C58966A21B78626A00B7A921 /* DACTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACTableViewController.swift; sourceTree = "<group>"; };
 		C589E0DD1B54F9FE0042305F /* ClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClusterAnnotationView.h; sourceTree = "<group>"; };
 		C589E0DE1B54F9FE0042305F /* ClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClusterAnnotationView.m; sourceTree = "<group>"; };
@@ -177,23 +167,18 @@
 			isa = PBXGroup;
 			children = (
 				1F56E6E61B3D8E0800CF6B28 /* DetailViewCell2.swift */,
+				C56E83621B75EF6F007E265D /* CommentsCell.swift */,
 				C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */,
 				1F7AA1951B385B3500B8D90B /* AnnotationDetailViewController.swift */,
 				C58966941B773B2500B7A921 /* DetailCommentViewController.swift */,
-				C56E83621B75EF6F007E265D /* CommentsCell.swift */,
+				C58966A21B78626A00B7A921 /* DACTableViewController.swift */,
 				C5E26B6C1B48E65400DE497E /* AddPostViewController.swift */,
 				C5B572751B68DF5800AE8349 /* LoginViewController.swift */,
 				1F7AA17B1B37C8E500B8D90B /* GPX.swift */,
 				1F7AA17F1B37D0D500B8D90B /* MKGPX.swift */,
 				1FA760661B25687800846233 /* MapViewController.swift */,
 				C59CC3ED1B744E51008CA0F0 /* GuillotineMenuViewController.swift */,
-				C58966A21B78626A00B7A921 /* DACTableViewController.swift */,
 				C58966911B771F1300B7A921 /* Main.storyboard */,
-				C54148641B7876AE00977C98 /* commentCell.swift */,
-				C58966981B7753C500B7A921 /* commentViewCell.swift */,
-				C589669C1B775C2D00B7A921 /* DetailViewCell.swift */,
-				C589669D1B775C2D00B7A921 /* DetailViewCell.xib */,
-				C58966991B7753C500B7A921 /* commentViewCell.xib */,
 				C59CC3EA1B744E51008CA0F0 /* GuillotineMenu */,
 				1F5ADD321B24AECB00335FEB /* Supporting Files */,
 			);
@@ -371,8 +356,6 @@
 			files = (
 				C58966931B771F1300B7A921 /* Main.storyboard in Resources */,
 				C525A4391B53A570008414D8 /* Images.xcassets in Resources */,
-				C589669B1B7753C500B7A921 /* commentViewCell.xib in Resources */,
-				C589669F1B775C2D00B7A921 /* DetailViewCell.xib in Resources */,
 				1F5ADD3F1B24AECB00335FEB /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,11 +437,8 @@
 				C5E26B6D1B48E65400DE497E /* AddPostViewController.swift in Sources */,
 				1F7AA1961B385B3500B8D90B /* AnnotationDetailViewController.swift in Sources */,
 				1F56E6E71B3D8E0800CF6B28 /* DetailViewCell2.swift in Sources */,
-				C54148651B7876AE00977C98 /* commentCell.swift in Sources */,
-				C589669A1B7753C500B7A921 /* commentViewCell.swift in Sources */,
 				1F7AA1801B37D0D500B8D90B /* MKGPX.swift in Sources */,
 				C5B572761B68DF5800AE8349 /* LoginViewController.swift in Sources */,
-				C589669E1B775C2D00B7A921 /* DetailViewCell.swift in Sources */,
 				C59CC3F01B744E51008CA0F0 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

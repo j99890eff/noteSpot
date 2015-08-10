@@ -8,9 +8,12 @@
 
 import UIKit
 import Haneke
-
+protocol detailCellDelegate{
+    func didCallAlert(controller: DetailViewCell2)
+    
+}
 class DetailViewCell2: UITableViewCell {
-
+    
     var Place : MKPlace?
         {
         didSet{
@@ -18,51 +21,131 @@ class DetailViewCell2: UITableViewCell {
             UpdateUI()
         }
     }
+    var delegate : detailCellDelegate! = nil
     
+ 
     
-    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var typeIcon: UIImageView!
     @IBOutlet weak var PlaceName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var photoView: UIImageView!
     
-    @IBOutlet weak var descriptionText: UILabel!
-    
-    @IBOutlet weak var CellView: UIView!
+    @IBOutlet weak var commentButton: UIButton!
+  
+    @IBOutlet weak var likeButton: UIButton!
+   
+    @IBOutlet weak var descriptLabel: UILabel!
+   
+  
+    @IBAction func clickShare(sender: AnyObject) {
+        self.delegate!.didCallAlert(self)
+    }
+
+    @IBAction func clickLike(sender: AnyObject) {
+        if(PFUser.currentUser() != nil){
+            if(self.Place!.likeOrNot == false){
+                self.Place!.likeOrNot = true
+                self.Place!.likes += 1
+                var user = PFUser.currentUser()
+                var relation = user!.relationForKey("likes")
+                
+                relation.addObject(Place!.Object)
+                let likeN = self.Place!.Object["like"] as! Int
+                self.Place!.Object["like"] = likeN + 1
+                self.Place!.Object.saveInBackground()
+                
+                self.likeButton?.setTitle(" \(self.Place!.likes)", forState:.Normal)
+                self.likeButton.setImage( UIImage(named: "like.png"), forState: .Normal)
+                
+                user!.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        
+                        
+                        
+                    } else {
+                        // There was a problem, check error.description
+                    }
+                    
+                }
+                
+            }
+            else{
+                self.Place!.likes -= 1
+                var user = PFUser.currentUser()
+                var relation = user!.relationForKey("likes")
+                let likeN = self.Place!.Object["like"] as! Int
+                self.Place!.Object["like"] = likeN - 1
+                self.Place!.Object.saveInBackground()
+                
+                relation.removeObject(Place!.Object)
+                self.Place!.likeOrNot = false
+                self.likeButton?.setTitle(" \(self.Place!.likes)", forState:.Normal)
+                self.likeButton.setImage( UIImage(named: "nolike.png"), forState: .Normal)
+                user!.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        
+                        
+                        
+                    }
+                }
+            }
+        }
+
+    }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
          var borderColor : UIColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.5)
-        CellView.layer.borderColor = borderColor.CGColor
-        CellView.layer.borderWidth = 0.5
-        CellView.layer.cornerRadius = 5.0
-        CellView.layer.shadowOpacity = 1
-        CellView.layer.shadowOffset = CGSize(width: 4, height: 4)
-        CellView.layer.shadowColor = UIColor.blackColor().CGColor
-        CellView.layer.shadowRadius = 5
+//        CellView.layer.borderColor = borderColor.CGColor
+//        CellView.layer.borderWidth = 0.5
+//        CellView.layer.cornerRadius = 5.0
+//        CellView.layer.shadowOpacity = 1
+//        CellView.layer.shadowOffset = CGSize(width: 4, height: 4)
+//        CellView.layer.shadowColor = UIColor.blackColor().CGColor
+//        CellView.layer.shadowRadius = 5
         photoView.layer.cornerRadius = 5.0
         // Initialization code
     }
     func UpdateUI(){
         PlaceName?.text = nil
-        authorLabel?.text = nil
-        descriptionText?.text = nil
-        typeLabel?.text = nil
-        likeLabel?.text = nil
+        descriptLabel?.text = nil
+       
         timeLabel?.text = nil
         photoView?.image = nil
         
         
         if let Placeinfo = self.Place{
             PlaceName?.text = Placeinfo.name
-          
-            authorLabel?.text = Placeinfo.author.username
-            
-            descriptionText?.text = Placeinfo.info
-            typeLabel?.text = "\(Placeinfo.type)"
-            likeLabel?.text = "\(Placeinfo.likes)"
+            var info = Placeinfo.author.username! + " : " + Placeinfo.info
+            descriptLabel?.text = info
+            switch Placeinfo.type{
+            case 0 :
+                
+                typeIcon.image = UIImage(named: "food.png")
+            case 1 :
+                typeIcon.image = UIImage(named: "view.png")
+            case 2 :
+                typeIcon.image = UIImage(named: "life.png")
+            case 3 :
+                typeIcon.image = UIImage(named: "fun.png")
+            case 4 :
+                typeIcon.image = UIImage(named: "buy.png")
+            default:
+                typeIcon.image = UIImage(named: "buy.png")
+                
+            }
+
+            likeButton?.setTitle(" \(Placeinfo.likes)", forState:.Normal)
+            if(self.Place!.likeOrNot){
+                self.likeButton.setImage( UIImage(named: "like.png"), forState: .Normal)
+            }
+            else{
+                self.likeButton.setImage( UIImage(named: "nolike.png"), forState: .Normal)
+            }
+            commentButton?.setTitle(" \(Placeinfo.comments)", forState:.Normal)
             
             
             let formatter = NSDateFormatter()

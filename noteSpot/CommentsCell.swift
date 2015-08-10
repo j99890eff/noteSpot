@@ -14,7 +14,7 @@ class CommentsCell: PFTableViewCell{
     @IBOutlet weak var descriptionText: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
-    var Comment:UserComment?
+    var Comment : UserComment?
         {
         didSet{
             

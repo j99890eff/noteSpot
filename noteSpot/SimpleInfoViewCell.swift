@@ -35,7 +35,7 @@ class SimpleInfoViewCell: UITableViewCell {
     
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
+
     
     @IBOutlet weak var typeIcon: UIImageView!
    
@@ -114,7 +114,7 @@ class SimpleInfoViewCell: UITableViewCell {
     }
     func UpdateUI(){
         placeName?.text = nil
-        authorLabel?.text = nil
+  
         descriptionText?.text = nil
         
         typeIcon.image = nil
@@ -125,10 +125,10 @@ class SimpleInfoViewCell: UITableViewCell {
         
         if let Placeinfo = self.Place{
             placeName?.text = Placeinfo.name
-           
-            authorLabel?.text = Placeinfo.author.username
+            var info = Placeinfo.author.username! + " : " + Placeinfo.info
             
-            descriptionText?.text = Placeinfo.info
+            
+            descriptionText?.text = info
             switch Placeinfo.type{
             case 0 :
                

@@ -93,8 +93,9 @@ class AnnotationDetailViewController: UITableViewController,simpleCellDelegate{
      
         
     }
-    
     func didCallAlert(controller: SimpleInfoViewCell) {
+        
+       
         let alert = UIAlertController(title: "More Option", message: "choose one!", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         alert.addAction(UIAlertAction(title: "Go By Google Map", style: UIAlertActionStyle.Default)
@@ -114,6 +115,7 @@ class AnnotationDetailViewController: UITableViewController,simpleCellDelegate{
                 
             }
         )
+       
         
        
         alert.addAction(UIAlertAction(title: "Go By Apple Map", style: UIAlertActionStyle.Default)
