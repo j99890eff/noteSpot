@@ -45,7 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         static let EditWaypointPopoverWidth: CGFloat = 320
         static let ShowDetailSegue = "showPlaceDetail"
         static let ShowSimpleSegue = "showSimpleDetail"
-        static let ShowListSegue = "ShowListDetail"
+        static let ShowListSegue = "showDetailList"
         static let ContainSegue = "containTableCell"
     }
     
@@ -155,17 +155,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                   advc = segue.destinationViewController as? AnnotationDetailViewController
             
             
-//            case Constants.ShowListSegue:
-//                if let DetailListVC = segue.destinationViewController as? AnnotationDetailViewController {
-//                    if postFeed.count > 0{
-//
-//                    DetailListVC.Places = self.postFeed
-//                    
-//                    }
-//                }
+            case Constants.ShowListSegue:
+                if let DetailListVC = segue.destinationViewController as? DACTableViewController {
+                    if postFeed.count > 0{
+
+                    DetailListVC.Places = self.postFeed
+               
+                    }
+                }
             default:break
         }
     }
+ //        updateMapAnnotations(updateFrom, updateType: updateType)
+//        controller.Places = self.postFeed
+    
 //    @IBAction func unwindToMap(segue:UIStoryboardSegue) {}
     
     // MARK: - SideMenuDelegate

@@ -11,7 +11,6 @@
 		1F5ADD351B24AECB00335FEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5ADD341B24AECB00335FEB /* AppDelegate.swift */; };
 		1F5ADD3F1B24AECB00335FEB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F5ADD3D1B24AECB00335FEB /* LaunchScreen.xib */; };
 		1F5ADD4B1B24AECB00335FEB /* noteSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5ADD4A1B24AECB00335FEB /* noteSpotTests.swift */; };
-		1F7AA17C1B37C8E500B8D90B /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AA17B1B37C8E500B8D90B /* GPX.swift */; };
 		1F7AA1801B37D0D500B8D90B /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AA17F1B37D0D500B8D90B /* MKGPX.swift */; };
 		1F7AA1961B385B3500B8D90B /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AA1951B385B3500B8D90B /* AnnotationDetailViewController.swift */; };
 		1FA760671B25687800846233 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA760661B25687800846233 /* MapViewController.swift */; };
@@ -30,7 +29,6 @@
 		C56E83631B75EF6F007E265D /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56E83621B75EF6F007E265D /* CommentsCell.swift */; };
 		C58220891B688AF70039E7D7 /* SimpleInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */; };
 		C58966931B771F1300B7A921 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58966911B771F1300B7A921 /* Main.storyboard */; };
-		C58966951B773B2500B7A921 /* DetailCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58966941B773B2500B7A921 /* DetailCommentViewController.swift */; };
 		C58966A31B78626A00B7A921 /* DACTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58966A21B78626A00B7A921 /* DACTableViewController.swift */; };
 		C589E0E11B54F9FE0042305F /* ClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C589E0DE1B54F9FE0042305F /* ClusterAnnotationView.m */; };
 		C589E0E21B54F9FE0042305F /* DataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C589E0E01B54F9FE0042305F /* DataReader.m */; };
@@ -74,7 +72,6 @@
 		1F5ADD441B24AECB00335FEB /* noteSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noteSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5ADD491B24AECB00335FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F5ADD4A1B24AECB00335FEB /* noteSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteSpotTests.swift; sourceTree = "<group>"; };
-		1F7AA17B1B37C8E500B8D90B /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		1F7AA17F1B37D0D500B8D90B /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
 		1F7AA1901B3858E900B8D90B /* noteSpot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "noteSpot-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F7AA1951B385B3500B8D90B /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnnotationDetailViewController.swift; path = ../AnnotationDetailViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +93,6 @@
 		C56E83621B75EF6F007E265D /* CommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
 		C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleInfoViewCell.swift; sourceTree = "<group>"; };
 		C58966921B771F1300B7A921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C58966941B773B2500B7A921 /* DetailCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommentViewController.swift; sourceTree = "<group>"; };
 		C58966A21B78626A00B7A921 /* DACTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACTableViewController.swift; sourceTree = "<group>"; };
 		C589E0DD1B54F9FE0042305F /* ClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClusterAnnotationView.h; sourceTree = "<group>"; };
 		C589E0DE1B54F9FE0042305F /* ClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClusterAnnotationView.m; sourceTree = "<group>"; };
@@ -170,11 +166,9 @@
 				C56E83621B75EF6F007E265D /* CommentsCell.swift */,
 				C58220881B688AF70039E7D7 /* SimpleInfoViewCell.swift */,
 				1F7AA1951B385B3500B8D90B /* AnnotationDetailViewController.swift */,
-				C58966941B773B2500B7A921 /* DetailCommentViewController.swift */,
 				C58966A21B78626A00B7A921 /* DACTableViewController.swift */,
 				C5E26B6C1B48E65400DE497E /* AddPostViewController.swift */,
 				C5B572751B68DF5800AE8349 /* LoginViewController.swift */,
-				1F7AA17B1B37C8E500B8D90B /* GPX.swift */,
 				1F7AA17F1B37D0D500B8D90B /* MKGPX.swift */,
 				1FA760661B25687800846233 /* MapViewController.swift */,
 				C59CC3ED1B744E51008CA0F0 /* GuillotineMenuViewController.swift */,
@@ -428,9 +422,7 @@
 				1FA760671B25687800846233 /* MapViewController.swift in Sources */,
 				C58220891B688AF70039E7D7 /* SimpleInfoViewCell.swift in Sources */,
 				C589E0E11B54F9FE0042305F /* ClusterAnnotationView.m in Sources */,
-				1F7AA17C1B37C8E500B8D90B /* GPX.swift in Sources */,
 				C59CC3F11B744E51008CA0F0 /* GuillotineMenuViewController.swift in Sources */,
-				C58966951B773B2500B7A921 /* DetailCommentViewController.swift in Sources */,
 				C589E0E21B54F9FE0042305F /* DataReader.m in Sources */,
 				C58966A31B78626A00B7A921 /* DACTableViewController.swift in Sources */,
 				C59CC3EF1B744E51008CA0F0 /* GuillotineMenuSegue.swift in Sources */,

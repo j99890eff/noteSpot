@@ -9,28 +9,32 @@
 import UIKit
 
 class DACTableViewController: UITableViewController,detailCellDelegate,UITextFieldDelegate,UIPopoverPresentationControllerDelegate{
+    @IBOutlet weak var replyView: UIView!
+    var Places = [MKPlace]()
+
+    var Comments = [[UserComment]]()
+    let cellIdentifier:String = "commentViewCell"
     var replyString:String?{
         didSet{
             var myComment = PFObject(className:"comments")
-            self.Place!.comments += 1
-            let commentN = self.Place!.Object["commentNumber"] as! Int
-            self.Place!.Object["commentNumber"] = commentN + 1
-            self.Place!.Object.saveInBackground()
+            self.Places[0].comments += 1
+            let commentN = self.Places[0].Object["commentNumber"] as! Int
+            self.Places[0].Object["commentNumber"] = commentN + 1
+            self.Places[0].Object.saveInBackground()
             myComment["content"] = replyString
-            myComment["commentFrom"] = Place!.Object
+            myComment["commentFrom"] = Places[0].Object
             myComment["commentBy"] = PFUser.currentUser()
             myComment.saveInBackgroundWithBlock { (succes, error) -> Void in
                 if(succes){
                     self.Comments.removeAll(keepCapacity: false)
-                    self.tableView.reloadData()
+//                    self.tableView.reloadData()
                     self.refresh()
                 }
             }
             
         }
     }
-    @IBAction func clickReply(sender: AnyObject) {
-    }
+
     @IBOutlet weak var replyText: UITextField!{
         didSet{
             if(PFUser.currentUser() != nil){
@@ -51,14 +55,18 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
         return true
     }
     
-    var Place: MKPlace?
-    var Comments = [UserComment]()
-    let cellIdentifier:String = "commentViewCell"
+
 
     func refresh(){
+         Comments = [[UserComment]](count: self.Places.count, repeatedValue: [UserComment]())
+        var pfob = [PFObject]()
+        for place in Places{
+            pfob.append(place.Object)
+        }
         var query = PFQuery(className:"comments")
         query.orderByAscending("createdAt")
-        query.whereKey("commentFrom", equalTo: PFObject(withoutDataWithClassName: "annotation", objectId: Place!.identifier))
+//        query.whereKey("commentFrom", equalTo: PFObject(withoutDataWithClassName: "annotation", objectId: place.identifier))
+        query.whereKey("commentFrom", containedIn:pfob)
         
         query.includeKey("commentBy")
         query.findObjectsInBackgroundWithBlock {
@@ -71,15 +79,25 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
                 if let objects = objects as? [PFObject] {
                     
                     for object in objects {
-                       
-                        self.Comments.append( UserComment(object: object))
+                        if let i = find(pfob,object["commentFrom"] as! PFObject){
+                            self.Comments[i].append(UserComment(object: object))}
                     }
+                    
                     self.tableView.reloadData()
                 }
             }
         }
+        
 
     }
+    func goToComment(controller : DetailViewCell2){
+        var tableVC = DACTableViewController()
+        tableVC.Places.append(controller.Place!)
+        self.navigationController?.pushViewController(tableVC, animated: true)
+        
+
+    }
+
     func didCallAlert(controller: DetailViewCell2) {
         
         
@@ -144,19 +162,22 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = tableView.rowHeight
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        if(Places.count == 1){
+            replyView?.hidden = false
+        }
+        else{
+            replyView?.hidden = true
+        }
         refresh()
-        if (NSClassFromString("UIVisualEffectView") != nil) {
-            // Add blur view
-            self.tableView.backgroundColor = UIColor.clearColor()
-            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-            visualEffectView.frame = self.tableView.bounds
-            visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
-            self.tableView.backgroundView = visualEffectView
-        }
-        if let popover = navigationController?.popoverPresentationController {
-            popover.backgroundColor = UIColor.clearColor()
-        }
+//        if (NSClassFromString("UIVisualEffectView") != nil) {
+//            // Add blur view
+//            self.tableView.backgroundColor = UIColor.clearColor()
+//            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+//            visualEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+//            self.tableView.insertSubview(visualEffectView, atIndex: 0)        }
+//        if let popover = navigationController?.popoverPresentationController {
+//            popover.backgroundColor = UIColor.clearColor()
+//        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -171,16 +192,16 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return Places.count
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return Comments.count+1
+        return Comments[section].count+1
     }
    
     
@@ -211,11 +232,11 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
 //            
 //        }
 //        return cell!
-        if(indexPath.row==0){
+        if(indexPath.row == 0){
             let cell  = tableView.dequeueReusableCellWithIdentifier("detailCell" ,forIndexPath: indexPath) as! DetailViewCell2
             
             
-            cell.Place = self.Place
+            cell.Place = self.Places[indexPath.section]
             cell.delegate = self
             return cell
         }
@@ -223,7 +244,7 @@ class DACTableViewController: UITableViewController,detailCellDelegate,UITextFie
             let cell  = tableView.dequeueReusableCellWithIdentifier("commentCell" ,forIndexPath: indexPath) as! CommentsCell
             
             
-            cell.Comment = self.Comments[indexPath.row-1]
+            cell.Comment = self.Comments[indexPath.section][indexPath.row-1]
             
             return cell
         }

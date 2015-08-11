@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapViewController.swift"
-            timestampString = "460872821.076019"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "updateMapAnnotations(_:updateType:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapViewController.swift"
-            timestampString = "460872821.076019"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
             landmarkName = "mapView(_:didSelectAnnotationView:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -157,8 +157,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
+            landmarkName = "prepareForSegue(_:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapViewController.swift"
-            timestampString = "460867953.38848"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "signUpViewController(_:didSignUpUser:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -281,9 +281,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "MapViewController"
-            landmarkType = "3">
+            endingLineNumber = "34">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -465,11 +463,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapViewController.swift"
-            timestampString = "460869158.596758"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "updateMapAnnotations(_:updateType:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -481,11 +479,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "noteSpot/DACTableViewController.swift"
-            timestampString = "460896015.980501"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "DACTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -497,11 +495,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "noteSpot/DACTableViewController.swift"
-            timestampString = "460893439.342004"
+            timestampString = "460961487.372825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "5">
          </BreakpointContent>

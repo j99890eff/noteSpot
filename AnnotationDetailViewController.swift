@@ -75,7 +75,7 @@ class AnnotationDetailViewController: UITableViewController,simpleCellDelegate{
             
             if let tableVC = segue.destinationViewController as? DACTableViewController{
            
-            tableVC.Place = Places[indexPath!.row] // get data by index and pass it to second view controller
+            tableVC.Places.append(Places[indexPath!.row]) // get data by index and pass it to second view controller
             }
             
         }

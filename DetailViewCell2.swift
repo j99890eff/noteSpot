@@ -10,7 +10,7 @@ import UIKit
 import Haneke
 protocol detailCellDelegate{
     func didCallAlert(controller: DetailViewCell2)
-    
+    func goToComment(controller : DetailViewCell2)
 }
 class DetailViewCell2: UITableViewCell {
     
@@ -24,6 +24,9 @@ class DetailViewCell2: UITableViewCell {
     var delegate : detailCellDelegate! = nil
     
  
+    @IBAction func clickComment(sender: AnyObject) {
+//        self.delegate.goToComment(self)
+           }
     
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var typeIcon: UIImageView!
